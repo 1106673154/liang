@@ -1,0 +1,17 @@
+<view class="content">
+    <image src="/img/cd_g.png" class="cd_g {{playP ? '':'active'}}"></image>
+    <view class="cd {{playP ? 'active':''}}">
+        <image src="/img/cd_b.png" class="cd_b"></image>
+        <image src="{{pic}}" class="webPic"></image>
+    </view>   
+</view>
+<view class="name">
+    <text>{{author}}</text>
+    <text class="musicNa">{{name}}</text>
+</view>
+<view class="sliderCont">
+    <text>{{curTime}}</text>
+    <slider bindchange="slider1change" step="1" value="{{reCurTime}}" min="0" max="{{reEndTime}}" activeColor="#cd3333"/>
+    <text>{{endTime}}</text>
+</view>
+<image src="{{playP ? '/img/pause.png':'/img/play.png'}}" bindtap="audioPlay" class="playBtn"></image>

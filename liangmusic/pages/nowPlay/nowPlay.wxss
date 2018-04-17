@@ -1,0 +1,102 @@
+
+page{
+   background: radial-gradient(#f6f6f8, rgba(30, 144, 255,1) 80%); 
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+.cd{
+    width: 600rpx;
+    height: 600rpx;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 20%;
+    position: relative;
+}
+.cd_b{
+    width: 100%;
+    height: 100%; 
+}
+.cd.active{
+    animation: cd 20s linear infinite forwards;
+}
+.cd_g{
+    width: 360rpx;
+    height: 260rpx;
+    position: absolute;
+    left:10%;
+    top: 4%;
+    z-index: 10;
+    transform-origin:0 0;
+    animation: cga 0.5s linear forwards;
+}
+.cd_g.active{
+    animation: cg 0.5s linear forwards;
+}
+.webPic{
+    width: 300rpx;
+    height: 300rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -150rpx;
+    margin-left: -150rpx;
+    z-index: 10;
+}
+.playBtn{
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    bottom: 10rpx;
+    left: 50%;
+    margin-left: -40rpx;
+}
+.sliderCont{
+    width: 92%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4%;
+    position: absolute;
+    bottom: 80rpx;
+    color: #fff;
+    font-size: 13px;
+}
+slider{
+    width: 70%;
+}
+.name{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+    color: #fff;
+    font-size: 14px;
+    margin-top: -20rpx;
+}
+.musicNa{
+    margin-top: 5rpx;
+    font-size: 13px;
+}
+@keyframes cd{
+    to{
+        transform: rotate(360deg)
+    }
+}
+@keyframes cg{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(-18deg)
+    }
+}
+@keyframes cga{
+    from{
+        transform: rotate(-18deg)
+    }
+    to{
+        transform: rotate(0deg)
+    }
+}

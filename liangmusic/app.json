@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/onLine/onLine",
+    "pages/nowPlay/nowPlay",
+    
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#CD3333",
+    "navigationBarTitleText": "良音乐",
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#8a8a8a",
+    "selectedColor": "#CD3333",
+    "list": [{
+      "pagePath": "pages/onLine/onLine",
+      "text": "在线音乐",
+      "iconPath": "img/music.png",
+      "selectedIconPath": "/img/music-sel.png"
+    },{
+      "pagePath": "pages/nowPlay/nowPlay",
+      "text": "正在播放",
+      "iconPath": "img/online.png",
+      "selectedIconPath": "img/online-sel.png"
+    }]
+  }
+}

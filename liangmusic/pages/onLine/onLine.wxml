@@ -1,0 +1,58 @@
+<view class="content">
+    <view class="tab_bar">
+        <view class="item" bindtap="onLine"><text class="{{tag ? '':'active'}}">云音乐</text></view>
+        <view class="item" bindtap="myMusic"><text class="{{tag ? 'active':''}}">我的音乐</text></view>
+        <view class="btmLine" style="left:{{tag ? '65%':'14%'}}"></view>
+        <image src="/img/back.png" class="back {{backTag ? '':'active'}}" bindtap="backView"></image>
+    </view>
+    <view class="scroll_view">
+        <swiper duration="{{duration}}" current="{{current}}" bindchange="bindchange">
+            <swiper-item>
+                <scroll-view scroll-y="{{scrollOr ? '' : 'true'}}" class="" bindscrolltolower="scrolltolower"> 
+                    <view class="{{categrayCont ? 'categrayCont':''}}" bindtap="categrayCont">
+                        <view id="1" class="categray {{categrayA ? 'categrayA':''}}" catchtap="categray">新歌榜</view>
+                        <view id="2" class="categray {{categrayA ? 'categrayB':''}}" catchtap="categray">热歌榜</view>
+                        <view id="22" class="categray {{categrayA ? 'categrayC':''}}" catchtap="categray">经典老哥榜</view>
+                        <view id="25" class="categray {{categrayA ? 'categrayD':''}}" catchtap="categray">网络歌曲榜</view>
+                        <view id="24" class="categray {{categrayA ? 'categrayE':''}}" catchtap="categray">影视金曲榜</view>
+                        <view id="11" class="categray {{categrayA ? 'categrayF':''}}" catchtap="categray">摇滚榜</view>
+                    </view>
+                    <view class="{{categrayCont ? '':'categrayCont'}}">
+                        <block wx:for="{{songList}}">
+                        <view class="listItem" id="{{item.song_id}}" bindtap="changeView">
+                            <image src="{{item.pic_small}}" class="peoImg"></image>
+                            <view class="peoDetail">
+                                <view class="detailTop">
+                                    <text class="musicName">{{item.album_title}}</text>
+                                    <text>{{item.publishtime}}</text>
+                                </view>
+                                <view class="detailTop">
+                                    <text class="peoName ">{{item.artist_name}}</text>
+                                    <!--<image id="{{item.song_id}}" src="{{collection ? '/img/sc.png' : '/img/sc-sel.png'}}" class="sc" catchtap="myLike"></image>-->
+                                </view>
+                            </view>
+                        </view>
+                        </block>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+            <swiper-item>
+                 <scroll-view scroll-y="true">
+                    <view class="listItem" bindtap="goToView">
+                        <image src="{{collectionList[0].poster}}" class="peoImg"></image>
+                        <view class="peoDetail">
+                            <view class="detailTop">
+                                <text class="musicName">{{collectionList[0].name}}</text>
+                                <text>2012-12-12</text>
+                            </view>
+                            <view class="detailTop">
+                                <text class="peoName ">{{collectionList[0].author}}</text>
+                                <!--<image src="/img/sc.png" class="sc"></image>-->
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
